@@ -286,7 +286,7 @@ upperLabel.place(x=543.75,y=105,anchor=CENTER)
 entry4 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
 entry4.place(x=543.75,y=130,anchor=CENTER)
 
-circle_image = PhotoImage(file="Desktop/Miscellaneous/Python Images/BDC/Percentages/0%.png")
+circle_image = PhotoImage(file="Images/Percentage Images/0%.png")
 circle_image_subsample = circle_image.subsample(7)
 percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
 percentage_circle.pack()
