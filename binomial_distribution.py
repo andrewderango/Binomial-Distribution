@@ -127,7 +127,7 @@ def getProbability():
 
     if inputEntryValid == 0:
         percentage_circle.place_forget()
-        circle_image = PhotoImage(file="Desktop/Miscellaneous/Python Images/BDC/Percentages/0%.png")
+        circle_image = PhotoImage(file="Images/Percentage Images/0%.png")
         circle_image_subsample = circle_image.subsample(7)
         percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
         percentage_circle.pack()
@@ -159,7 +159,7 @@ def getProbability():
     for percentageIndex in range(len(percentages)):
         perc_prob_differences.append(abs(cumulativeProbability*100 - percentages[percentageIndex]))
 
-    circle_image = PhotoImage(file="Desktop/Miscellaneous/Python Images/BDC/Percentages/" + str(percentages[perc_prob_differences.index(min(perc_prob_differences))]) + "%.png")
+    circle_image = PhotoImage(file="Images/Percentage Images/" + str(percentages[perc_prob_differences.index(min(perc_prob_differences))]) + "%.png")
     circle_image_subsample = circle_image.subsample(7)
     percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
     percentage_circle.pack()
@@ -304,7 +304,7 @@ finalProbabilityPrecise.place(x=337.5, y=400, anchor=CENTER)
 title = Label(font=("TkDefaultFont", 30, "bold"),text='Binomial Distribution Calculator',background="#151326",foreground="#00A5EC")
 title.place(x=337.5,y=50,anchor=CENTER)
 
-calc_probability_button = PhotoImage(file="Desktop/Miscellaneous/Python Images/BDC/calculate_probability.png")
+calc_probability_button = PhotoImage(file="Images/calculate_probability.png")
 calc_button_subsample = calc_probability_button.subsample(1)
 probability_button = Button(root, image=calc_button_subsample, highlightbackground="#151326", padx = 0, pady = 0, command=getProbability)
 probability_button.place(x=337.5, y=205, anchor=CENTER)
