@@ -260,7 +260,7 @@ def show_hist():
     plt.tight_layout()
     plt.show()
 
-current_directory = os.getcwd()
+current_directory = os.path.dirname(__file__)
 
 probLabel = Label(font=("TkDefaultFont", 9),text='Success probability',fg="#00A5EC",bg="#151326")
 probLabel.place(x=131.25,y=105,anchor=CENTER)
@@ -313,3 +313,6 @@ probability_button.place(x=337.5, y=205, anchor=CENTER)
 #calc_button.place(x=337.5,y=210,anchor=CENTER)
 
 root.mainloop()
+
+if __name__ == '__main__:
+    main()
