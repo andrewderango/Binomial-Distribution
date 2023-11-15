@@ -260,59 +260,60 @@ def show_hist():
     plt.tight_layout()
     plt.show()
 
-current_directory = os.path.dirname(__file__)
-
-probLabel = Label(font=("TkDefaultFont", 9),text='Success probability',fg="#00A5EC",bg="#151326")
-probLabel.place(x=131.25,y=105,anchor=CENTER)
-
-entry1 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
-entry1.place(x=131.25,y=130,anchor=CENTER)
-
-attemptsLabel = Label(font=("TkDefaultFont", 9),text='Attempts',fg="#00A5EC",bg="#151326")
-attemptsLabel.place(x=268.75,y=105,anchor=CENTER)
-
-entry2 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
-entry2.place(x=268.75,y=130,anchor=CENTER)
-
-lowerLabel = Label(font=("TkDefaultFont", 9),text='Lower bound',fg="#00A5EC",bg="#151326")
-lowerLabel.place(x=406.25,y=105,anchor=CENTER)
-
-entry3 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
-entry3.place(x=406.25,y=130,anchor=CENTER)
-
-upperLabel = Label(font=("TkDefaultFont", 9),text='Upper bound',fg="#00A5EC",bg="#151326")
-upperLabel.place(x=543.75,y=105,anchor=CENTER)
-
-entry4 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
-entry4.place(x=543.75,y=130,anchor=CENTER)
-
-circle_image = PhotoImage(file=os.path.join(current_directory, "Images/Percentage Images/0%.png"))
-circle_image_subsample = circle_image.subsample(7)
-percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
-percentage_circle.pack()
-percentage_circle.place(x=337.5, y=340, anchor=CENTER)
-
-circle_probability_title = Label(text="PROBABILITY", font=("TkDefaultFont", 14), fg="#555555", bg="#151326")
-circle_probability_title.place(x=337.5, y=365, anchor=CENTER)
-
-finalProbabilityBigNum = Label(text="-- %", font=("TkDefaultFont", 33, "bold"), fg="#00A5EC", bg="#151326")
-finalProbabilityBigNum.place(x=337.5, y=330, anchor=CENTER)
-
-finalProbabilityPrecise = Label(text="--", font=("TkDefaultFont", 9), fg="#383838", bg="#151326")
-finalProbabilityPrecise.place(x=337.5, y=400, anchor=CENTER)
-
-title = Label(font=("TkDefaultFont", 30, "bold"),text='Binomial Distribution Calculator',background="#151326",foreground="#00A5EC")
-title.place(x=337.5,y=50,anchor=CENTER)
-
-calc_probability_button = PhotoImage(file=os.path.join(current_directory, "Images/calculate_probability.png"))
-calc_button_subsample = calc_probability_button.subsample(1)
-probability_button = Button(root, image=calc_button_subsample, highlightbackground="#151326", padx = 0, pady = 0, command=getProbability)
-probability_button.place(x=337.5, y=205, anchor=CENTER)
-
-#calc_button = Button(fg="#151326",highlightbackground="white",text="Calculate Probability",width=20,height=3,font=("TkDefaultFont", 13, "bold"),command=getProbability)
-#calc_button.place(x=337.5,y=210,anchor=CENTER)
-
-root.mainloop()
+def main():
+    current_directory = os.path.dirname(__file__)
+    
+    probLabel = Label(font=("TkDefaultFont", 9),text='Success probability',fg="#00A5EC",bg="#151326")
+    probLabel.place(x=131.25,y=105,anchor=CENTER)
+    
+    entry1 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
+    entry1.place(x=131.25,y=130,anchor=CENTER)
+    
+    attemptsLabel = Label(font=("TkDefaultFont", 9),text='Attempts',fg="#00A5EC",bg="#151326")
+    attemptsLabel.place(x=268.75,y=105,anchor=CENTER)
+    
+    entry2 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
+    entry2.place(x=268.75,y=130,anchor=CENTER)
+    
+    lowerLabel = Label(font=("TkDefaultFont", 9),text='Lower bound',fg="#00A5EC",bg="#151326")
+    lowerLabel.place(x=406.25,y=105,anchor=CENTER)
+    
+    entry3 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
+    entry3.place(x=406.25,y=130,anchor=CENTER)
+    
+    upperLabel = Label(font=("TkDefaultFont", 9),text='Upper bound',fg="#00A5EC",bg="#151326")
+    upperLabel.place(x=543.75,y=105,anchor=CENTER)
+    
+    entry4 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
+    entry4.place(x=543.75,y=130,anchor=CENTER)
+    
+    circle_image = PhotoImage(file=os.path.join(current_directory, "Images/Percentage Images/0%.png"))
+    circle_image_subsample = circle_image.subsample(7)
+    percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
+    percentage_circle.pack()
+    percentage_circle.place(x=337.5, y=340, anchor=CENTER)
+    
+    circle_probability_title = Label(text="PROBABILITY", font=("TkDefaultFont", 14), fg="#555555", bg="#151326")
+    circle_probability_title.place(x=337.5, y=365, anchor=CENTER)
+    
+    finalProbabilityBigNum = Label(text="-- %", font=("TkDefaultFont", 33, "bold"), fg="#00A5EC", bg="#151326")
+    finalProbabilityBigNum.place(x=337.5, y=330, anchor=CENTER)
+    
+    finalProbabilityPrecise = Label(text="--", font=("TkDefaultFont", 9), fg="#383838", bg="#151326")
+    finalProbabilityPrecise.place(x=337.5, y=400, anchor=CENTER)
+    
+    title = Label(font=("TkDefaultFont", 30, "bold"),text='Binomial Distribution Calculator',background="#151326",foreground="#00A5EC")
+    title.place(x=337.5,y=50,anchor=CENTER)
+    
+    calc_probability_button = PhotoImage(file=os.path.join(current_directory, "Images/calculate_probability.png"))
+    calc_button_subsample = calc_probability_button.subsample(1)
+    probability_button = Button(root, image=calc_button_subsample, highlightbackground="#151326", padx = 0, pady = 0, command=getProbability)
+    probability_button.place(x=337.5, y=205, anchor=CENTER)
+    
+    #calc_button = Button(fg="#151326",highlightbackground="white",text="Calculate Probability",width=20,height=3,font=("TkDefaultFont", 13, "bold"),command=getProbability)
+    #calc_button.place(x=337.5,y=210,anchor=CENTER)
+    
+    root.mainloop()
 
 if __name__ == '__main__:
     main()
