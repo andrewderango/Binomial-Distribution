@@ -1,11 +1,9 @@
 from tkinter import *
 import math
-import time
+import os
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.interpolate import make_interp_spline
-
-print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
 
 root = Tk()
 root.resizable(False, False)
@@ -127,7 +125,7 @@ def getProbability():
 
     if inputEntryValid == 0:
         percentage_circle.place_forget()
-        circle_image = PhotoImage(file="Images/Percentage Images/0%.png")
+        circle_image = PhotoImage(file=os.path.join(current_directory, "Images/Percentage Images/0%.png"))
         circle_image_subsample = circle_image.subsample(7)
         percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
         percentage_circle.pack()
@@ -159,7 +157,7 @@ def getProbability():
     for percentageIndex in range(len(percentages)):
         perc_prob_differences.append(abs(cumulativeProbability*100 - percentages[percentageIndex]))
 
-    circle_image = PhotoImage(file="Images/Percentage Images/" + str(percentages[perc_prob_differences.index(min(perc_prob_differences))]) + "%.png")
+    circle_image = PhotoImage(file=os.path.join(current_directory, "Images/Percentage Images/" + str(percentages[perc_prob_differences.index(min(perc_prob_differences))]) + "%.png"))
     circle_image_subsample = circle_image.subsample(7)
     percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
     percentage_circle.pack()
@@ -262,6 +260,8 @@ def show_hist():
     plt.tight_layout()
     plt.show()
 
+current_directory = os.getcwd()
+
 probLabel = Label(font=("TkDefaultFont", 9),text='Success probability',fg="#00A5EC",bg="#151326")
 probLabel.place(x=131.25,y=105,anchor=CENTER)
 
@@ -286,7 +286,7 @@ upperLabel.place(x=543.75,y=105,anchor=CENTER)
 entry4 = Entry(root, borderwidth=3, justify=CENTER, relief=SUNKEN, width=7)
 entry4.place(x=543.75,y=130,anchor=CENTER)
 
-circle_image = PhotoImage(file="Images/Percentage Images/0%.png")
+circle_image = PhotoImage(file=os.path.join(current_directory, "Images/Percentage Images/0%.png"))
 circle_image_subsample = circle_image.subsample(7)
 percentage_circle = Label(root, image=circle_image_subsample, bg="#151326")
 percentage_circle.pack()
@@ -304,7 +304,7 @@ finalProbabilityPrecise.place(x=337.5, y=400, anchor=CENTER)
 title = Label(font=("TkDefaultFont", 30, "bold"),text='Binomial Distribution Calculator',background="#151326",foreground="#00A5EC")
 title.place(x=337.5,y=50,anchor=CENTER)
 
-calc_probability_button = PhotoImage(file="Images/calculate_probability.png")
+calc_probability_button = PhotoImage(file=os.path.join(current_directory, "Images/calculate_probability.png"))
 calc_button_subsample = calc_probability_button.subsample(1)
 probability_button = Button(root, image=calc_button_subsample, highlightbackground="#151326", padx = 0, pady = 0, command=getProbability)
 probability_button.place(x=337.5, y=205, anchor=CENTER)
